@@ -11,7 +11,7 @@ public class Palindrome {
         }
         return LinkedChar;
     }
-    public boolean helper(Deque<Character> dd){
+    private boolean helper(Deque<Character> dd){
         if(dd.size() == 0 || dd.size() == 1){
             return true;
         }else if(dd.removeFirst() != dd.removeLast()){
@@ -31,7 +31,7 @@ public class Palindrome {
         if(j == 0 || j == 1){
             return true;
         }
-        for(int i = 0; i<=j/2; i++){
+        for(int i = 0; i<=j/2-1; i++){
             char x = word.charAt(i);
             char y = word.charAt(j-i-1);
             if(!cc.equalChars(x, y)){
@@ -39,11 +39,5 @@ public class Palindrome {
             }
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        Palindrome p =new Palindrome();
-        OffByOne oo = new OffByOne();
-        System.out.println(p.isPalindrome("12354",oo));
     }
 }
